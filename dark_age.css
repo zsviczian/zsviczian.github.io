@@ -3,6 +3,11 @@ div[style*="padding-right: calc((100% - 800px) / 2); padding-left: calc((100% - 
     padding-left: calc((100% - var(--reduce-padding-left)) / 2) !important;
 }
 
+h1[style*="margin-bottom: 32px;"] {
+	margin-bottom: 32px !important;
+	font-family: var(--header-font) !important;
+}
+
 .rm-calc-val {
     color: var(--hashtags);
 }
