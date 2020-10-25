@@ -1,0 +1,1898 @@
+:root {
+  /* GLOBAL FONT */
+  --global-font: 'PT Mono', monospace; /*'Inter', sans-serif; */
+  --secondary-font: "PT Mono", monospace; /*Courier*/
+  --header-font: 'Orbitron', monospace;
+  /* GLOBAL WIDTH FOR BLOCKS */
+  --reduce-padding-right: 950px;        /* DEFAULT 568px;  Increase these two padding values to increase */
+  --reduce-padding-left: 1500px;        /* DEFAULT 1032px; the global width of your blocks on the page */
+  /* TEXT COLORS */
+  --page-links: #569699;          /* [[Page Link]] */
+  --attributes-color: #83a598;    /* Attribute:: */
+  --external-links: #8ec07c;     /* https://www.google.com */
+  --links-hover: #b16286;             /* hover color of all links */
+  --hashtags: #fabd2f;                /* #hashtag #[[hash tags]] */
+  --hashtags-background: #b16286;
+  --body-text: #bdae93;             /* general body text */
+  --italics-color: #83a598;         /* __italicized text__ */
+  --bold-color: #fbf1c7;              /* **bolded text** */
+  --highlight-text-color: #1d2021;   /* highlighted text color */
+  --highlighter: #cc241d;             /* highlighter color */
+  --background: #32302f;              /* main page background */
+  --sidebar-background: #282828;      /* sidebar background */
+  --sidebar-text: #fbf1c7;            /* sidebar text  */
+  --page-heading: #d65d0e;            /* Page Title (i.e. roam/css) */
+  --daily-heading: #8ec07c;           /* Daily Notes date heading */
+  --headings: #fe8019;                /* h1, h2, h3 */
+  --bullets: #fabd2f;                 /* bullet color */
+  --closed-bullets: #7c6f64;          /* closed bullet color */
+  --references: #928374;              /* reference underline color */
+  --block-reference-text: #7c6f64;    /* block reference color */
+  --namespaces: #b8bb26;              /* Namespace/color (win: ctrl+c ctrl+L) or (mac: cmd+c cmd+L) */
+  --all-pages-mentions: #fe8019;      /* mentions pill on ALl Pages */
+  --cursor: #fbf1c7;                  /* cursor color */
+  --scrollbar: #d79921;
+  /* ICON COLORS */
+  --icons: #98971a;                   /* icons color */
+  --icons-hover: #458588;             /* icons hover color */
+  --filter-icon: #fb4934;             /* filter icon color */
+  /* FONT SIZES */
+  --main-font-size: 1em;                /* DEFAULT 1em. Can change to px, e.g. 12px, or minor increments like 1.01em */
+  --page-head-font-size: 2.2em;          /* page heading */
+  --h1-font-size: 1.6em;                /* h1 size */
+  --h2-font-size: 1.2em;                /* h2 size */
+  --h3-font-size: 1em;                /* h3 size */
+  --sidebar-h1-size: 26px;			  /* DEFAULT 26px. sidebar page headings */
+  /* DROPDOWN MENU */
+  --dropdown-menu-background: #464545; /* Dropdown menu background color */
+  --dropdown-menu-highlight: #3e3d3d;  /* Dropdown menu item highlight */
+  --dropdown-menu-text: #da844f;      /* Text color in dropdown menus */
+  --dropdown-newpage: #1AD546;
+  /* SEARCH BAR */
+  --search-bar-background: #26272a;
+  --search-bar-text: #FFFFFF;
+  /* KANBAN CARD COLORS */
+  --kanban-main-background: #2b2a2a;
+  --kanban-column-background: #2b2a2a;
+  --kanban-card-background: #5959591c;
+  --kanban-text-hover: #00ee6b;
+}
+
+div[style*="padding-right: calc((100% - 800px) / 2); padding-left: calc((100% - 800px) / 2);"] {
+    padding-right: calc((100% - var(--reduce-padding-right)) / 2) !important;
+    padding-left: calc((100% - var(--reduce-padding-left)) / 2) !important;
+}
+
+.rm-calc-val {
+    color: var(--hashtags);
+}
+
+/*////////////////////////////////*/
+/*                                */
+/*     Container Sizing Fixes     */
+/*                                */
+/*////////////////////////////////*/
+
+/*
+.roam-block {  this is making empty blocks wrong height
+    min-height: calc(1em + 8px);
+}
+*/
+
+.rm-block-text {
+    max-width: 100% !important;
+  }
+
+/* Global Font style */
+div, textarea {
+    font-family: var(--global-font) !important;
+}
+
+/* Table Cell sizing */
+td {
+    padding: 8px 8px !important;
+    text-align: center;
+    min-width: 40px !important;
+  }
+  
+/* Menu Overlay fix */
+
+.bp3-elevation-3 {
+    z-index: 2000 !important;
+  }
+  
+
+/* Vertical centering Horizontal rules and headings  */
+
+  hr {
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
+  
+  h3.rm-level3 {
+        margin-top: -3px !important;
+  }
+  h2.rm-level2 {
+        margin-top: -4px !important;
+  }
+  h1.rm-level1 {
+        margin-top: -5px !important;
+  }
+
+/*/////////////////////////////////////*/
+/*                                     */
+/*     General Background Coloring     */
+/*                                     */
+/*/////////////////////////////////////*/
+
+/* MAIN BACKGROUND COLOR */
+body, .roam-body-main {
+    background-color: var(--background);
+}
+
+/* TOPBAR  & SIDEBAR BACKGROUND COLORS */
+#right-sidebar, .roam-topbar, .roam-sidebar-container {
+    background-color: var(--sidebar-background) !important;
+}
+
+.roam-topbar {
+  border-bottom: 0px;
+}
+
+/* BLOCKS BACKGROUND */
+.roam-block > span > div {
+    background-color: inherit !important;
+}
+
+.roam-bullet-closed {
+    background-color: var(--closed-bullets) !important;
+}
+
+.simple-bullet-inner {
+    background-color: var(--bullets) !important;
+}
+
+.rm-caret, .bp3-icon-standard {
+    color: #fffc !important;
+    opacity: 1 !important;
+}
+
+.rm-caret.rm-caret-hidden {
+    opacity: 0 !important;
+}
+
+.bp3-icon-standard:hover {
+    color: var(--icons-hover) !important;
+}
+
+.bp3-menu .bp3-icon-standard{
+    color: var(--background) !important;
+}
+
+#roam-sidebar-logo:hover {
+  background: transparent !important;
+}
+
+#roam-sidebar-logo img, #roam-sidebar-logo div span {
+  	transition: color .3s ease;
+}
+
+#roam-sidebar-logo:hover div span {
+  color: var(--links-hover) !important;
+  transition: color .3s ease;
+}
+
+/*//////////////////////////////*/
+/*                              */
+/*     General Text Styling     */
+/*                              */
+/*//////////////////////////////*/
+
+/* Main Font Size  WIP */
+
+div {
+    font-size: var(--main-font-size) !important;
+}
+
+
+/* Heading Sizes */
+
+h1 {
+    font-size: var(--page-head-font-size) !important;
+}
+
+h1, h1.level2 {
+    font-family: var(--header-font) !important;
+}
+
+.rm-level1 {
+    font-size: var(--h1-font-size) !important;
+}
+
+.rm-level2 {
+    font-size: var(--h2-font-size) !important;
+}
+
+.rm-level3 {
+    font-size: var(--h3-font-size) !important;
+}
+
+/* sidebar h1 */
+.level2[style*="margin: 0px"] {
+    font-size: var( --sidebar-h1-size) !important;
+}
+
+/* Cursor color */
+.roam-body .roam-app {
+    caret-color: var(--cursor) !important;
+}
+
+/* Body text color */
+.roam-body .roam-app {
+    color: var(--body-text) !important;
+}
+
+/* sidebar text color */
+.page, .log-button, .starred-pages-wrapper {
+    color: var(--sidebar-text) !important;
+  	font-weight: 600;
+    transition: color .3s ease;
+}
+
+/* sidebar text hover color */
+.page:hover, .log-button:hover {
+    color: var(--links-hover) !important;
+    text-decoration: none !important;
+    transition: color .3s ease;
+    background: transparent !important;
+}
+
+/* Heading/Header Colors, includes Date header on daily notes */
+h1, h2, h3 {
+    color: var(--headings) !important;
+}
+
+/* Page title & Daily date color */
+.rm-title-display {
+    color: var(--page-heading) !important;
+  }
+  
+.roam-log-page .rm-title-display {
+    color: var(--daily-heading) !important;
+  }
+
+.roam-log-page.roam-log-preview h1 {
+    color: var(--daily-heading) !important;
+}
+
+/* main link coloring + hover */
+a {
+  	color: var(--external-links) !important;
+    transition: color .3s ease;
+}
+
+/* Internal Roam Links [[Roam]] & #Roam & #[[Roam]] */
+.rm-page-ref-tag, .rm-page-ref-link-color, .rm-ref-page-view-title a, .bp3-text-overflow-ellipsis a, .rm-pages-title-text strong, .rm-page-ref {
+    color: var(--page-links) !important;
+    font-weight: 700;
+    transition: color .3s ease;
+}
+
+.rm-page-ref-tag {
+    color: var(--hashtags) !important;
+    font-weight: 400;
+	background: var(--hashtags-background) !important;
+}
+
+.rm-page-ref-tag:hover, .rm-pages-title-text strong:hover, .rm-page-ref:hover {
+    color: var(--links-hover) !important;
+    text-decoration: none;
+    transition: color .3s ease;
+}
+
+h1.level1 a, h1.level2 a, h1.level3 a, h1.level4 a,
+h2.level1 a, h2.level2 a, h2.level3 a, h2.level4 a,
+h3.level1 a, h3.level2 a, h3.level3 a, h3.level4 a,
+h4.level1 a, h4.level2 a, h4.level3 a, h1.level4 a { 
+    color: var(--page-links) !important;
+    font-weight: 600;
+}
+
+h1.level1 a:hover, h1.level2 a:hover, h1.level3 a:hover, h1.level4 a:hover,
+h2.level1 a:hover, h2.level2 a:hover, h2.level3 a:hover, h2.level4 a:hover,
+h3.level1 a:hover, h3.level2 a:hover, h3.level3 a:hover, h3.level4 a:hover,
+h4.level1 a:hover, h4.level2 a:hover, h4.level3 a:hover, h4.level4 a:hover { 
+    color: var(--links-hover) !important;
+    font-weight: 600;
+}
+
+.rm-page-ref-link-color:hover, a:focus, a:hover {
+    color: var(--links-hover) !important;
+    text-decoration: none !important;
+    transition: color .3s ease;
+}
+
+/* Attribute links */
+strong[tabindex="-1"] {
+    color: var(--attributes-color) !important;
+  }
+
+/* ToDos color + Z-index Fix */
+.check-container input:checked ~ .checkmark {
+    background-color: #FFFFFF;
+    background-color: rgb(27, 159, 28);
+}
+
+.check-container {
+    z-index: 1000;
+}
+
+/* remove underlining on links */
+span {
+    text-decoration: none !important;
+}
+
+/* path text color for linked references */
+.parent-path-wrapper {
+    color: var(--references);
+}
+
+em {
+    color: var(--italics-color);
+}
+
+strong {
+    color: var(--bold-color);
+}
+
+
+/* block reference */
+.roam-block .rm-block-ref, span[style*="color: red"] {
+    background-color: transparent !important;
+    color: var(--block-reference-text) !important;
+    transition: color .3s ease, border .3s ease;
+    border-bottom: var(--reference-underline) solid var(--block-reference-text);
+}
+
+
+.roam-block .rm-block-ref:hover {
+    background-color: transparent !important;
+    color: var(--links-hover) !important;
+    transition: color .3s ease, border .3s ease;
+    border-bottom: var(--reference-underline) solid var(--links-hover);
+}
+
+/* Namespace text color [[roam/css]] when using CTRL+C CTRL+L || CMD+C CMD+L */
+
+.rm-page-ref-namespace-color {
+    color: var(--namespaces) !important;
+    font-weight: 600;
+    transition: color .3s ease;
+}
+
+.rm-page-ref-namespace-color:hover {
+    color: var(--links-hover);
+    text-decoration: none;
+    transition: color .3s ease;
+}
+
+
+/* Highlights */
+
+.roam-highlight {
+    color: var(--highlight-text-color);
+    background-color: var(--highlighter);
+}
+
+.block-highlight-yellow {
+    background: #6e6b5e8c !important;
+
+}
+
+/*///////////////////////////*/
+/*                           */
+/*     Reference Section     */
+/*                           */
+/*///////////////////////////*/
+
+/* Reference Background Color + Spacing Fixes */
+.rm-reference-item {
+    background-color: transparent;
+    margin: 10px 0px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--references);
+}
+
+.rm-level1 {
+    margin-bottom: 20px;
+}
+
+/* Reference Section Divider */
+.rm-reference-container {
+    border-top: 5px double var(--references);
+    padding-top: 15px;
+}
+
+/*///////////////////*/
+/*                   */
+/*     Search Box    */
+/*                   */
+/*///////////////////*/
+
+/* Search box background color */
+.bp3-input, .rm-pages-toolbar .toolbar-search-group .search-input {
+    background: var(--search-bar-background);
+}
+
+/* Search box placeholder text color */
+.bp3-input::placeholder {
+  color: var(--search-bar-text);
+  opacity: .33;
+}
+
+/* Search box input text color */
+.bp3-input-group input {
+    color: var(--search-bar-text) !important;
+}
+
+/* Dropdown page menu hover highlight */
+.rm-menu-item:hover {
+    background: var(--dropdown-menu-highlight) !important;
+}
+
+/* New page text color */
+.rm-new-page {
+    color: var(--dropdown-newpage) !important;
+}
+
+
+/*///////////////////////////////////*/
+/*                                   */
+/*     Code & Code Block styling     */
+/*                                   */
+/*///////////////////////////////////*/
+
+code {
+    background: #121212;
+    background: rgba(18, 18, 18, 0.60);
+    color: #c78741;
+    border: 1px solid #000000;
+    border: 1px solid rgba(18, 18, 18, 0.87);
+}
+
+.CodeMirror {
+    background-color: var(--background) !important;
+    color: #dbba96;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 1px solid #089daf;
+}
+
+.CodeMirror-gutter-elt, .CodeMirror-gutter {
+    background-color: var(--background) !important;
+    color: #666;
+}
+
+.CodeMirror-line {
+    padding-left: 6px !important;
+}
+
+.CodeMirror-gutters {
+    padding-right: 3px;
+    border-right: 1px solid #676767;
+    background-color: transparent;
+    white-space: nowrap;
+}
+
+.cm-s-default .cm-keyword {
+    color: var(--icons);
+}
+
+.cm-s-default .cm-number {
+    color: #0cb974;
+}
+
+.cm-s-default .cm-meta {
+    color: #959595;
+}
+
+.cm-s-default .cm-error {
+    color: #cc4f4f;
+}
+
+.CodeMirror-selected {
+    background-color: #655959 !important;
+}
+
+.cm-qualifier, .cm-def {
+    color: #ff9500 !important;
+}
+
+.cm-atom, .cm-builtin, .cm-string {
+    color: #c3bca8 !important;
+}
+
+.cm-comment {
+    color: #ffffff54 !important;
+}
+
+.CodeMirror-widget div:first-child {
+    padding-right: 0px !important;
+}
+
+.roam-block.dont-unfocus-block.hoverparent.rm-block-text .rm-pomodoro:first-child {
+    padding-right: 15px !important;
+}
+
+/* CSS Variables */ 
+.cm-s-default .cm-variable-2 {
+    color: rgb(255,201,0);
+  }
+/*/////////////////////////////////////*/
+/*                                     */
+/*     "All Pages" Section Styling     */
+/*                                     */
+/*/////////////////////////////////////*/
+
+/* Top bar size fixes */
+.rm-all-pages .table .rm-pages-row .rm-pages-checkbox-col  {
+    padding-right: 0px !important;
+}
+
+/* Row background color */
+.rm-pages-row {
+    background-color: transparent !important;
+    border-bottom: 1px solid #ffffff42;
+}
+
+.rm-pages-row-highlight {
+    background-color: transparent !important;
+}
+
+.title-children-text {
+    color: #c3bca8 !important
+}
+
+.bp3-text-overflow-ellipsis a:hover {
+    color: var(--links-hover) !important;
+    text-decoration: none;
+    transition: color .3s ease;
+}
+
+/* Title Header */
+.bp3-text-overflow-ellipsis, .rm-pages-sort-header {
+    color: #ff9500;
+}
+
+/* Mentions Pill */
+.rm-clickable-pill, .rm-clickable-pill.level1-pill, .rm-clickable-pill.level2-pill, .rm-clickable-pill.level3-pill, .rm-clickable-pill.level4-pill {
+    color: var(--background);
+    background: var(--all-pages-mentions);
+    opacity: 1 !important;
+    padding: 2px 10px !important;
+    width: 42px;
+    border-radius: 2px;
+}
+
+.rm-clickable-pill.level1-pill {
+    background: var(--all-pages-mentions);
+    filter: hue-rotate(-10deg);
+}
+
+.rm-clickable-pill.level3-pill {
+    background: var(--all-pages-mentions);
+    filter: hue-rotate(-20deg);
+}
+
+.rm-clickable-pill.empty-pill {
+    color: #ffffff6e;
+    background: var(--background);
+}
+
+.rm-clickable-pill:hover {
+    background: var(--links-hover);
+}
+
+/* Checkbox */
+.bp3-control input:checked ~ .bp3-control-indicator  {
+    background: rgb(27, 159, 28);;
+}
+
+.bp3-control input:checked ~ .bp3-control-indicator:hover  {
+    background: rgb(1, 122, 69);;
+}
+
+.bp3-control.bp3-checkbox .bp3-control-indicator {
+    border-radius: 25px;
+}
+
+.rm-pages-col div:first-child {
+    padding-right: 10px !important;
+}
+
+/*///////////////////////////////*/
+/*                               */
+/*     Dropdown Menu Styling     */
+/*                               */
+/*///////////////////////////////*/
+
+.bp3-popover-content, .bp3-menu, .bp3-elevation-3 {
+    background-color: var(--dropdown-menu-background) !important;
+    color: var(--page-links) !important;
+}
+
+
+.bp3-menu a:hover, .bp3-elevation-3 .dont-unfocus-block:hover  {
+    background: #0000001c;
+}
+
+.bp3-elevation-3 .dont-unfocus-block:hover .bp3-text-overflow-ellipsis {
+    color: var(--links-hover) !important;
+    text-decoration: none;
+    transition: color .3s ease;
+}
+
+.bp3-menu-item-label {
+    color: #ffffffc7 !important;
+}
+
+.bp3-elevation-3 .dont-unfocus-block[style*="background-color: rgb(213, 218, 223);"], .bp3-popover-content .rm-menu-item[style*="background-color: rgb(213, 218, 223);"] {
+    background-color: #0000001c !important;
+}
+
+.bp3-text-overflow-ellipsis {
+    color: var(--dropdown-menu-text) !important;
+}
+
+button[style*="padding: 4px 8px;"] {
+    color: black;
+}
+/*////////////////////////*/
+/*                        */
+/*     Button Styling     */
+/*                        */
+/*////////////////////////*/
+
+.bp3-button {
+    background-color: transparent !important;
+    text-transform: uppercase;
+    /*margin-right: 5px;*/
+  	border: 0px !important;
+}
+
+.bp3-button[class*="bp3-icon-"]::before, .bp3-icon-filter, .bp3-button.bp3-minimal.bp3-small, .bp3-icon.bp3-icon-calendar.filter-icon, .bp3-icon.filter-icon.bp3-icon-eye-open, .bp3-button.bp3-icon-calendar {
+    color: var(--icons) !important;
+    background: transparent !important;
+    opacity: 1;
+}
+
+.bp3-button[class*="bp3-icon-"]:hover, .bp3-button[class*="bp3-icon-"]:hover::before, .bp3-icon-filter:hover, .bp3-button.bp3-minimal:hover, .bp3-icon.bp3-icon-calendar.filter-icon:hover, .bp3-icon.filter-icon.bp3-icon-eye-open:hover {
+    background: transparent !important;
+    transition: background .1s ease, color .3s ease;
+    color: var(--icons-hover) !important;
+    opacity: 1;
+}
+
+/* remove shadow border around calendar icon */
+.bp3-button:not([class*="bp3-intent-"]), .bp3-button:not([class*="bp3-intent-"]):hover {
+  box-shadow: none;
+}
+
+.block-ref-count-button {
+    font-family: 'Inter', sans-serif !important;
+    background: transparent  !important;
+    border-radius: 100px !important;
+    z-index: 1000 !important;
+    transition: color .3s ease, border .3s ease !important;
+    opacity: 1 !important;
+}
+
+.bp3-button.bp3-minimal.bp3-small.block-ref-count-button {
+    min-height: 18px !important;
+    min-width: 18px !important;
+    padding: 0 5px 0px 4px !important;
+    margin-left: 50% !important;
+    border: var(--reference-border) var(--block-reference-text) solid !important;
+    color: var(--block-reference-text) !important;
+    text-align: center;
+  	font-weight: bold;
+    z-index: 9999;
+}
+
+.bp3-button.bp3-minimal.bp3-small.block-ref-count-button:hover {
+    color: var(--icons-hover) !important;
+    background: transparent !important;
+    border: var(--reference-border) solid var(--icons-hover) !important;
+    border-radius: 100px !important;
+    z-index: 9999 !important;
+    transition: color .3s ease,  border .3s ease !important;
+}
+
+
+.bp3-icon.bp3-icon-filter[style*="color: rgb(168, 42, 42);"] {
+    color: var(--filter-icon) !important;
+}
+
+div[style*="position: absolute; z-index: 1000; top: 0px; right: 0px; opacity: 0.5;"] {
+    opacity: 1 !important;
+}
+
+.bp3-popover-content .bp3-button {
+    background: #ffffff82 !important;
+}
+
+.bp3-icon.bp3-icon-calendar.filter-icon
+
+/*////////////////////////////////*/
+/*                                */
+/*     Embedded Block Styling     */
+/*                                */
+/*////////////////////////////////*/
+
+.rm-embed-container:hover > .rm-embed-edit {
+    right: 30px;
+}
+
+.rm-embed-inner-block-hide {
+    margin-left: 0px !important;
+}
+
+.rm-embed-edit {
+    margin-right: 5px;
+    z-index: 1000;
+}
+
+/*/////////////////////////////*/
+/*                             */
+/*     Kanban Card Styling     */
+/*                             */
+/*/////////////////////////////*/
+
+.kanban-column-container, .kanban-board {
+    background-color:  var(--kanban-main-background);
+
+}
+
+.kanban-title {
+    color: var(--links-hover);
+}
+
+.kanban-column {
+    background-color: var(--kanban-column-background);
+}
+
+.kanban-card {
+    background-color: var(--kanban-card-background);
+}
+
+span[data-link-title="DONE"] .rm-page-ref {
+    color: #00ee6b !important;
+}
+
+span[data-link-title="TODO"] .rm-page-ref {
+    color: #ee4f00 !important;
+}
+
+span[data-link-title="DOING"] .rm-page-ref {
+    color: #ffa900 !important;
+}
+
+span[data-link-title="TODO"] .rm-page-ref {
+    color: #ee4f00 !important;
+}
+.kanban-card:hover {
+    color: var(--kanban-text-hover);
+}
+
+/*//////////////////////////*/
+/*                          */
+/*         Pomodoro         */
+/*    thx to @Mappletons    */
+/*                          */
+/*//////////////////////////*/
+
+.dont-focus-block.bp3-button.rm-pomodoro {
+    background  : red !important;
+    padding-right: 20px;
+    color       : white !important;
+  }
+  
+  .bp3-button.rm-pomodoro.running {
+    background: #E91E63 !important;
+    color     : white !important;
+  }
+  
+  .dont-focus-block.bp3-button.rm-pomodoro {
+    font-family: var(--secondary-font);
+  }
+  
+  .bp3-button.rm-pomodoro.break {
+    background: #4CAF50 !important;
+    color     : var(--body-text) !important;
+  }
+  
+/* NEW */
+
+/* Pro / Con Option tag coloring */
+span[data-tag="pro"], span[data-tag="p"] {
+    color: #00ee6b !important;
+}
+
+span[data-link-title="pro"] span, span[data-link-title="p"] span, span[data-link-title="+"] span{
+    background: #00ee6b !important;
+    padding: 1px 5px;
+    border-radius: 150px;
+    font-weight: 600;
+    color: var(--background) !important;
+    text-transform: uppercase;
+    font-family: Courier New;
+    transition: background 2s ease;
+}
+
+span[data-link-title="con"] span, span[data-link-title="c"] span, span[data-link-title="-"] span{
+    background: #ee4f00 !important;
+    padding: 1px 5px;
+    border-radius: 150px;
+    font-weight: 600;
+    color: var(--background) !important;
+    text-transform: uppercase;
+    font-family: Courier New;
+    transition: background 1s ease;
+}
+
+
+span[data-link-title="pro"] span:hover, span[data-link-title="p"] span:hover, span[data-link-title="+"] span:hover, span[data-link-title="con"] span:hover, span[data-link-title="c"] span:hover, span[data-link-title="-"] span:hover {
+    color: var(--background) !important;
+    background: var(--page-links) !important;
+    transition: background .3s ease;
+}
+
+span[data-tag="con"], span[data-tag="c"] {
+    color: #ee4f00 !important;
+}
+span[data-tag="choice"] {
+    color: #EEAA00 !important;
+}
+
+select[style*="background-color: white;"] {
+    background: transparent !important;
+}
+
+select option {
+    background: rgba(0,0,0,0.7) !important;
+    color: white;
+}
+
+/* Word Count */
+.bp3-button:not([class*="bp3-intent-"]) {
+    /*background: transparent !important; not sure this is needed? */
+    color: var(--body-text) !important;
+    font-family: Courier New;
+    transition: color .3s ease;
+}
+
+.bp3-button:not([class*="bp3-intent-"]):hover {
+    transition: color .3s ease;
+    color: var(--icons-hover) !important;
+}
+
+/* Query */
+.rm-query-title {
+  background: inherit !important;
+  color: var(--references) !important;
+  font-weight: 600;
+}
+
+/* Alias */
+span[style*="background-color: rgb(235, 241, 245);"] {
+    background: var(--sidebar-background) !important;
+    color: var(--body-text) !important;
+  	border: 1px solid var(--body-text);
+    transition: color .3s ease, border .3s ease;
+}
+
+span[style*="background-color: rgb(235, 241, 245);"]:hover {
+    background: var(--sidebar-background) !important;
+    color: var(--links-hover) !important;
+    border: 1px solid var(--links-hover);
+    transition: color .3s ease, border .3s ease;
+}
+
+button {
+  background: transparent !important;
+}
+
+/* diagram */
+svg[style*="background-color: rgb(86, 112, 134);"] {
+    background: var(--background) !important;
+}
+
+div[style*="background-color: white"] {
+    background: var(--background) !important;
+}
+
+g rect {
+    fill: var(--background) !important;
+
+}
+
+rect[fill*="#fff"] {
+    fill: var(--links-hover) !important;
+}
+
+textarea[autocapitalize*="none"] {
+    color: var(--body-text) !important;
+}
+
+foreignObject {
+    cursor: -webkit-grab; 
+  	cursor: grab;
+}
+
+button[style*="border: 0.5px solid rgb(206, 217, 224);"] {
+  background: var(--body-text) !important;
+}
+
+button[style*="border: none"] {
+  background: var(--links-hover) !important;
+}
+
+.rm-emoji-button {
+  background: transparent !important;
+  border: 1px solid #c3bca8 !important;
+}
+
+div[style*="color: rgb(14, 90, 138);"] {
+    color: var(--page-links) !important;
+}
+
+/* chart */
+svg[style*="background-color: white;"] {
+    background: transparent  !important;
+}
+
+g circle {
+    fill: var(--links-hover) !important;
+}
+
+/* Calculation */
+
+span[style*="color: rgb(14, 90, 138);"] {
+    font-family: Courier New;
+    color: var(--page-links) !important;
+    font-weight: 600;
+}
+
+.bp3-popover-arrow-fill {
+    fill: transparent !important;
+}
+
+.bp3-popover[style*="transform-origin: left 15px;"] .bp3-popover-content {
+    color: var(--page-links) !important;
+    padding: 0 10px;   
+}
+
+/* Calendar */
+
+.bp3-datepicker-day-wrapper, .DayPicker-Weekday {
+    color: var(--background);
+}
+
+.bp3-datepicker .DayPicker-Day.DayPicker-Day--outside {
+    opacity: .4;
+}
+
+/* Astrolabe */
+.loading-astrolabe {
+    content:url("https://i.imgur.com/ucITJk7.gif");
+}
+
+
+/* ROAM BREADCRUMBS STYLING */
+
+.roam-topbar .bp3-popover-wrapper, .rm-find-or-create-wrapper {
+    /*background: var(--sidebar-background);*/
+    z-index: 10;
+  }
+  
+  .bp3-input {
+    background: var(--search-bar-background) !important; /* search bar background color */
+  }
+  
+  .linkNumber {
+    font-family: "Courier New";
+    margin-right: 3px;
+    color: rgb(255,255,255) !important;
+  }
+  
+  .recentLink {
+    color: rgba(255,255,255,0.45) !important;
+  }
+
+.roam-sidebar-container .roam-sidebar-content .top-row:hover {
+      background-color: var(--sidebar-background) !important;
+  }
+/* this broke with recent update, was using it to not cut off icon for # of references on a block
+.bp3-popover-wrapper {
+    min-width: 24px;
+}   */
+
+/* GLOBAL WIDTH */
+
+#rm-log-container {
+    padding-right: calc((100% - var(--reduce-padding-right)) / 2) !important;
+    padding-left: calc((100% - var(--reduce-padding-left)) / 2) !important;
+}
+
+/* fix for width when left sidebar open */
+div[style*="padding-right: calc((100% - 568px) / 2); padding-left: calc((100% - 1032px) / 2);"] {
+    padding-right: calc((100% - var(--reduce-padding-right)) / 2) !important;
+    padding-left: calc((100% - var(--reduce-padding-left)) / 2) !important;
+}
+
+/* fix for width when left sidebar closed */
+div[style*="padding-right: calc((100% - 800px) / 2); padding-left: calc((100% - 800px) / 2);"] {
+    padding-right: calc((100% - calc((var(--reduce-padding-right) + var(--reduce-padding-left)) / 2)) / 2) !important;
+    padding-left:  calc((100% - calc((var(--reduce-padding-right) + var(--reduce-padding-left)) / 2)) / 2) !important;
+}
+
+.roam-block-container {
+    max-width: 100%;
+}
+
+/* hide sidebar button visibility */
+.bp3-icon-menu-closed {
+    transition: opacity .3s ease !important;
+}
+
+/* sidebar dropdown menu */
+.roam-body .roam-app .roam-sidebar-container .rm-graph-dropdown .menu-title {
+    color: var(--dropdown-menu-text) !important;
+}
+  
+.roam-body .roam-app .roam-sidebar-container .rm-graph-dropdown .setting {
+    background: transparent !important;
+}
+
+.level2 {
+    font-family: var(--global-font) !important;
+  }
+
+/*/////////////////////////*/
+/*                         */
+/*     Sidebar Styling     */
+/*                         */
+/*/////////////////////////*/
+
+
+  /* David's flex width fix */
+.roam-center {
+    flex-basis: auto !important;
+    resize    : horizontal !important;
+    overflow  : auto !important;
+  }
+
+/*/////////////////////////////////*/
+/*                                 */
+/*     {{[[roam/js]]}} Styling     */
+/*                                 */
+/*/////////////////////////////////*/
+
+div[style="color: rgb(114, 28, 36); background: rgb(248, 215, 218); padding: 10px;"] {
+    background: rgb(88,116,217) !important;
+    color: var(--body-text) !important;
+    opacity: .8;
+    border-radius: 8px;
+}
+  
+button.bp3-button.dont-focus-block[style="color: rgb(255, 255, 255); background: rgb(220, 53, 69);"],
+button.bp3-button.dont-focus-block[style="color: rgb(33, 37, 41); background: rgb(255, 193, 7);"]
+{
+    background: var(--background) !important;
+    color: var(--body-text) !important;
+}
+  
+div[style*="background: rgb(255, 243, 205);"] {
+    background: var(--icons) !important;
+    color: var(--body-text) !important;
+    opacity: .8;
+    border-radius: 8px;
+}
+  
+button.bp3-button.dont-focus-block[style="color: rgb(255, 255, 255); background: rgb(220, 53, 69);"]:hover
+{
+    background: var(--icons) !important;
+}
+
+button.bp3-button.dont-focus-block[style="color: rgb(33, 37, 41); background: rgb(255, 193, 7);"]:hover {
+    background: var(--icons-hover) !important;
+}
+
+/* MISC */
+
+.block-border-left {
+    margin-left   : 6px;
+    border-radius : 0;
+    padding: 0 !important;
+    border-color: var(--body-text);
+  }
+
+  .pinned + .bp3-icon-cross {
+    display: none;
+  }
+  
+  
+/* scroll bars */
+
+div::-webkit-scrollbar-track {
+    background-color: rgba(0,0,0,0.1) !important;
+    border-radius: 20px;
+  }
+  
+  div::-webkit-scrollbar-thumb {
+    transition: border .5s ease;
+    /*background-color: rgba(255,255,255,0.05) !important;*/
+	background-color: var(--scrollbar) !important;
+  }
+  
+  div::-webkit-scrollbar {
+    width        : 5px;
+    height       : 5px;
+    border-radius: 5px;
+  }
+  
+  div::-webkit-scrollbar-thumb:hover {
+    transition: border .5s ease;
+    border          : 5px rgba(255,255,255,0.1) solid;
+  }
+
+  .rm-inline-references {
+      background: transparent !important;
+  }
+ 
+ 
+/*////////////////////////////////////////*/
+/*       								  */
+/*           Mermaid					  */
+/*       								  */
+/*////////////////////////////////////////*/
+
+/* Flowchart variables */
+/* Sequence Diagram variables */
+/* Gantt chart variables */
+/* state colors */
+.label {
+  /*font-family: 'trebuchet ms', verdana, arial !important;*/
+  /*font-family: var(--mermaid-font-family) !important;*/
+  font-size: 0.9em;
+  fill: var(--body-text) !important;
+  color: var(--body-text) !important;
+  line-height: unset !important;
+}
+
+.label text {
+  fill: var(--body-text) !important;
+}
+
+.node rect,
+.node circle,
+.node ellipse,
+.node polygon,
+.node path {
+  fill: var(--sidebar-background) !important;
+  stroke: var(--highlighter) !important;
+  stroke-width: 1px !important;
+}
+
+.node .label {
+  text-align: center !important;
+  fill: var(--body-text) !important;
+}
+
+.node.clickable {
+  cursor: pointer !important;
+}
+
+.arrowheadPath {
+  fill: var(--references) !important;
+}
+
+.edgePath .path {
+  stroke: var(--references) !important;
+  stroke-width: 1.5px !important;
+}
+
+.flowchart-link {
+  stroke: var(--references) !important;
+  fill: none !important;
+}
+
+.edgeLabel {
+  background-color: var(--background) !important;
+  text-align: center !important;
+}
+
+.edgeLabel rect {
+  opacity: 0 !important;
+}
+
+.edgeLabel span {
+  color: var(--bold-color) !important;
+}
+
+.cluster rect {
+  fill: var(--background) !important;
+  stroke: rgba(255, 255, 255, 0.25) !important;
+  stroke-width: 1px !important;
+}
+
+.cluster text {
+  fill: var(--body-text) !important;
+}
+
+div.mermaidTooltip {
+  position: absolute !important;
+  text-align: center !important;
+  max-width: 200px !important;
+  padding: 2px !important;
+  font-family: 'trebuchet ms', verdana, arial !important;
+  font-family: var(--mermaid-font-family) !important;
+  font-size: 12px !important;
+  background: var(--background) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  border-radius: 2px !important;
+  pointer-events: none !important;
+  z-index: 100 !important;
+}
+
+.actor {
+  stroke: var(--highlighter) !important;
+  fill: var(--sidebar-background) !important;
+}
+
+text.actor > tspan {
+  fill: var(--references) !important;
+  stroke: none !important;
+}
+
+.actor-line {
+  stroke: var(--references) !important;
+}
+
+.messageLine0 {
+  stroke-width: 1.5 !important;
+  stroke-dasharray: none !important;
+  stroke: var(--references) !important;
+}
+
+.messageLine1 {
+  stroke-width: 1.5 !important;
+  stroke-dasharray: 2, 2 !important;
+  stroke: var(--references) !important;
+}
+
+#arrowhead path {
+  fill: var(--references) !important;
+  stroke: var(--references) !important;
+}
+
+.sequenceNumber {
+  fill: black !important;
+}
+
+#sequencenumber {
+  fill: var(--references) !important;
+}
+
+#crosshead path {
+  fill: var(--references) !important;
+  stroke: var(--references) !important;
+}
+
+.messageText {
+  fill: var(--references) !important;
+  stroke: var(--references) !important;
+}
+
+.labelBox {
+  stroke: var(--highlighter) !important;
+  fill: var(--sidebar-background) !important;
+}
+
+.labelText, .labelText > tspan {
+  fill: var(--references) !important;
+  stroke: none !important;
+}
+
+.loopText, .loopText > tspan {
+  fill: var(--references) !important;
+  stroke: none !important;
+}
+
+.loopLine {
+  stroke-width: 2px !important;
+  stroke-dasharray: 2, 2 !important;
+  stroke: var(--highlighter) !important;
+  fill: var(--highlighter) !important;
+}
+
+.note {
+  stroke: rgba(255, 255, 255, 0.25) !important;
+  fill: #fff5ad !important;
+}
+
+.noteText, .noteText > tspan {
+  fill: var(--sidebar-background) !important;
+  stroke: none !important;
+}
+
+.activation0 {
+  fill: var(--background) !important;
+  stroke: var(--highlighter) !important;
+}
+
+.activation1 {
+  fill: var(--background) !important;
+  stroke: var(--highlighter) !important;
+}
+
+.activation2 {
+  fill: var(--background) !important;
+  stroke: var(--highlighter) !important;
+}
+
+/** Section styling */
+.mermaid-main-font {
+  font-family: "trebuchet ms", verdana, arial !important;
+  font-family: var(--mermaid-font-family) !important;
+}
+
+.section {
+  stroke: none !important;
+  opacity: 0.2 !important;
+}
+
+.section0 {
+  fill: rgba(255, 255, 255, 0.3) !important;
+}
+
+.section2 {
+  fill: #EAE8B9 !important;
+}
+
+.section1,
+.section3 {
+  fill: white !important;
+  opacity: 0.2 !important;
+}
+
+.sectionTitle0 {
+  fill: var(--body-text) !important;
+}
+
+.sectionTitle1 {
+  fill: var(--body-text) !important;
+}
+
+.sectionTitle2 {
+  fill: var(--body-text) !important;
+}
+
+.sectionTitle3 {
+  fill: var(--body-text) !important;
+}
+
+.sectionTitle {
+  text-anchor: start !important;
+  font-size: 11px !important;
+  text-height: 14px !important;
+  font-family: 'trebuchet ms', verdana, arial !important;
+  font-family: var(--mermaid-font-family) !important;
+}
+
+/* Grid and axis */
+.grid .tick {
+  stroke: var(--references) !important;
+  opacity: 0.8 !important;
+  shape-rendering: crispEdges !important;
+}
+
+.grid .tick text {
+  font-family: 'trebuchet ms', verdana, arial !important;
+  font-family: var(--mermaid-font-family) !important;
+}
+
+.grid path {
+  stroke-width: 0 !important;
+}
+
+/* Today line */
+.today {
+  fill: none !important;
+  stroke: #DB5757 !important;
+  stroke-width: 2px !important;
+}
+
+/* Task styling */
+/* Default task */
+.task {
+  stroke-width: 2 !important;
+}
+
+.taskText {
+  text-anchor: middle !important;
+  /*font-family: 'trebuchet ms', verdana, arial !important;*/
+  font-family: var(--mermaid-font-family) !important;
+}
+
+.taskText:not([font-size]) {
+  font-size: 11px !important;
+}
+
+.taskTextOutsideRight {
+  fill: #fefefe !important;
+  text-anchor: start !important;
+  font-size: 11px !important;
+  /*font-family: 'trebuchet ms', verdana, arial !important;*/
+  font-family: var(--mermaid-font-family) !important;
+}
+
+.taskTextOutsideLeft {
+  fill: #fefefe !important;
+  text-anchor: end !important;
+  font-size: 11px !important;
+}
+
+/* Special case clickable */
+.task.clickable {
+  cursor: pointer !important;
+}
+
+.taskText.clickable {
+  cursor: pointer !important;
+  fill: #003163 !important !important;
+  font-weight: bold !important;
+}
+
+.taskTextOutsideLeft.clickable {
+  cursor: pointer !important;
+  fill: #003163 !important !important;
+  font-weight: bold !important;
+}
+
+.taskTextOutsideRight.clickable {
+  cursor: pointer !important;
+  fill: #003163 !important !important;
+  font-weight: bold !important;
+}
+
+/* Specific task settings for the sections*/
+.taskText0,
+.taskText1,
+.taskText2,
+.taskText3 {
+  fill: #fefefe !important;
+}
+
+.task0,
+.task1,
+.task2,
+.task3 {
+  fill: var(--sidebar-background) !important;
+  stroke: rgba(255, 255, 255, 0.5) !important;
+}
+
+.taskTextOutside0,
+.taskTextOutside2 {
+  fill: var(--references) !important;
+}
+
+.taskTextOutside1,
+.taskTextOutside3 {
+  fill: var(--references) !important;
+}
+
+/* Active task */
+.active0,
+.active1,
+.active2,
+.active3 {
+  fill: var(--highlighter) !important;
+  stroke: rgba(255, 255, 255, 0.5) !important;
+}
+
+.activeText0,
+.activeText1,
+.activeText2,
+.activeText3 {
+  fill: #fefefe !important !important;
+}
+
+/* Completed task */
+.done0,
+.done1,
+.done2,
+.done3 {
+  stroke: grey !important;
+  fill: var(--references) !important;
+  stroke-width: 2 !important;
+}
+
+.doneText0,
+.doneText1,
+.doneText2,
+.doneText3 {
+  fill: #fefefe !important !important;
+}
+
+/* Tasks on the critical line */
+.crit0,
+.crit1,
+.crit2,
+.crit3 {
+  stroke: #E83737 !important;
+  fill: #E83737 !important;
+  stroke-width: 2 !important;
+}
+
+.activeCrit0,
+.activeCrit1,
+.activeCrit2,
+.activeCrit3 {
+  stroke: #E83737 !important;
+  fill: var(--highlighter) !important;
+  stroke-width: 2 !important;
+}
+
+.doneCrit0,
+.doneCrit1,
+.doneCrit2,
+.doneCrit3 {
+  stroke: #E83737 !important;
+  fill: var(--references) !important;
+  stroke-width: 2 !important;
+  cursor: pointer !important;
+  shape-rendering: crispEdges !important;
+}
+
+.milestone {
+  transform: rotate(45deg) scale(0.8, 0.8) !important;
+}
+
+.milestoneText {
+  font-style: italic !important;
+}
+
+.doneCritText0,
+.doneCritText1,
+.doneCritText2,
+.doneCritText3 {
+  fill: #fefefe !important !important;
+}
+
+.activeCritText0,
+.activeCritText1,
+.activeCritText2,
+.activeCritText3 {
+  fill: #fefefe !important !important;
+}
+
+.titleText {
+  text-anchor: middle !important;
+  font-size: 18px !important;
+  fill: #fefefe !important;
+  /*font-family: 'trebuchet ms', verdana, arial !important;*/
+  font-family: var(--mermaid-font-family) !important;
+}
+
+g.classGroup text {
+  fill: var(--highlighter) !important;
+  stroke: none !important;
+  /*font-family: 'trebuchet ms', verdana, arial !important;*/
+  font-family: var(--mermaid-font-family) !important;
+  font-size: 10px !important;
+}
+
+g.classGroup text .title {
+  font-weight: bolder !important;
+}
+
+g.clickable {
+  cursor: pointer !important;
+}
+
+g.classGroup rect {
+  fill: var(--sidebar-background) !important;
+  stroke: var(--highlighter) !important;
+}
+
+g.classGroup line {
+  stroke: var(--highlighter) !important;
+  stroke-width: 1 !important;
+}
+
+.classLabel .box {
+  stroke: none !important;
+  stroke-width: 0 !important;
+  fill: var(--sidebar-background) !important;
+  opacity: 0.5 !important;
+}
+
+.classLabel .label {
+  fill: var(--highlighter) !important;
+  font-size: 10px !important;
+}
+
+.relation {
+  stroke: var(--highlighter) !important;
+  stroke-width: 1 !important;
+  fill: none !important;
+}
+
+.dashed-line {
+  stroke-dasharray: 3 !important;
+}
+
+#compositionStart {
+  fill: var(--highlighter) !important;
+  stroke: var(--highlighter) !important;
+  stroke-width: 1 !important;
+}
+
+#compositionEnd {
+  fill: var(--highlighter) !important;
+  stroke: var(--highlighter) !important;
+  stroke-width: 1 !important;
+}
+
+#aggregationStart {
+  fill: var(--sidebar-background) !important;
+  stroke: var(--highlighter) !important;
+  stroke-width: 1 !important;
+}
+
+#aggregationEnd {
+  fill: var(--sidebar-background) !important;
+  stroke: var(--highlighter) !important;
+  stroke-width: 1 !important;
+}
+
+#dependencyStart {
+  fill: var(--highlighter) !important;
+  stroke: var(--highlighter) !important;
+  stroke-width: 1 !important;
+}
+
+#dependencyEnd {
+  fill: var(--highlighter) !important;
+  stroke: var(--highlighter) !important;
+  stroke-width: 1 !important;
+}
+
+#extensionStart {
+  fill: var(--highlighter) !important;
+  stroke: var(--highlighter) !important;
+  stroke-width: 1 !important;
+}
+
+#extensionEnd {
+  fill: var(--highlighter) !important;
+  stroke: var(--highlighter) !important;
+  stroke-width: 1 !important;
+}
+
+.commit-id,
+.commit-msg,
+.branch-label {
+  fill: var(--references) !important;
+  color: var(--references) !important;
+  /*font-family: 'trebuchet ms', verdana, arial !important;*/
+  font-family: var(--mermaid-font-family) !important;
+}
+
+.pieTitleText {
+  text-anchor: middle !important;
+  font-size: 25px !important;
+  fill: #fefefe !important;
+  /*font-family: 'trebuchet ms', verdana, arial !important;*/
+  font-family: var(--mermaid-font-family) !important;
+}
+
+.slice {
+  /*font-family: 'trebuchet ms', verdana, arial !important;*/
+  font-family: var(--mermaid-font-family) !important;
+}
+
+g.stateGroup text {
+  fill: var(--highlighter) !important;
+  stroke: none !important;
+  font-size: 10px !important;
+  /*font-family: 'trebuchet ms', verdana, arial !important;*/
+  font-family: var(--mermaid-font-family) !important;
+}
+
+g.stateGroup text {
+  fill: var(--highlighter) !important;
+  fill: var(--body-text) !important;
+  stroke: none !important;
+  font-size: 10px !important;
+}
+
+g.statediagram-cluster .cluster-label text {
+  fill: var(--body-text) !important;
+}
+
+g.stateGroup .state-title {
+  font-weight: bolder !important;
+  fill: #f4f4f4 !important;
+}
+
+g.stateGroup rect {
+  fill: var(--sidebar-background) !important;
+  stroke: var(--highlighter) !important;
+}
+
+g.stateGroup line {
+  stroke: var(--highlighter) !important;
+  stroke-width: 1 !important;
+}
+
+.transition {
+  stroke: var(--highlighter) !important;
+  stroke-width: 1 !important;
+  fill: none !important;
+}
+
+.stateGroup .composit {
+  fill: white !important;
+  border-bottom: 1px !important;
+}
+
+.stateGroup .alt-composit {
+  fill: #e0e0e0 !important;
+  border-bottom: 1px !important;
+}
+
+.state-note {
+  stroke: rgba(255, 255, 255, 0.25) !important;
+  fill: #fff5ad !important;
+}
+
+.state-note text {
+  fill: black !important;
+  stroke: none !important;
+  font-size: 10px !important;
+}
+
+.stateLabel .box {
+  stroke: none !important;
+  stroke-width: 0 !important;
+  fill: var(--sidebar-background) !important;
+  opacity: 0.7 !important;
+}
+
+.edgeLabel text {
+  fill: var(--bold-color) !important;
+}
+
+.stateLabel text {
+  fill: #f4f4f4 !important;
+  font-size: 10px !important;
+  font-weight: bold !important;
+  /*font-family: 'trebuchet ms', verdana, arial !important;*/
+  font-family: var(--mermaid-font-family) !important;
+}
+
+.node circle.state-start {
+  fill: black !important;
+  stroke: black !important;
+}
+
+.node circle.state-end {
+  fill: black !important;
+  stroke: white !important;
+  stroke-width: 1.5 !important;
+}
+
+#statediagram-barbEnd {
+  fill: var(--highlighter) !important;
+}
+
+.statediagram-cluster rect {
+  fill: var(--sidebar-background) !important;
+  stroke: var(--highlighter) !important;
+  stroke-width: 1px !important;
+}
+
+.statediagram-cluster rect.outer {
+  rx: 5px !important;
+  ry: 5px !important;
+}
+
+.statediagram-state .divider {
+  stroke: var(--highlighter) !important;
+}
+
+.statediagram-state .title-state {
+  rx: 5px !important;
+  ry: 5px !important;
+}
+
+.statediagram-cluster.statediagram-cluster .inner {
+  fill: white !important;
+}
+
+.statediagram-cluster.statediagram-cluster-alt .inner {
+  fill: #e0e0e0 !important;
+}
+
+.statediagram-cluster .inner {
+  rx: 0 !important;
+  ry: 0 !important;
+}
+
+.statediagram-state rect.basic {
+  rx: 5px !important;
+  ry: 5px !important;
+}
+
+.statediagram-state rect.divider {
+  stroke-dasharray: 10,10 !important;
+  fill: #efefef !important;
+}
+
+.note-edge {
+  stroke-dasharray: 5 !important;
+}
+
+.statediagram-note rect {
+  fill: #fff5ad !important;
+  stroke: rgba(255, 255, 255, 0.25) !important;
+  stroke-width: 1px !important;
+  rx: 0 !important;
+  ry: 0 !important;
+}
+
+:root {
+  --mermaid-font-family: '"trebuchet ms", verdana, arial' !important;
+  --mermaid-font-family: "Comic Sans MS", "Comic Sans", cursive !important;
+}
+
+/* Classes common for multiple diagrams */
+.error-icon {
+  fill: #a44141 !important;
+}
+
+.error-text {
+  fill: #ddd !important;
+  stroke: #ddd !important;
+}
+
+.edge-thickness-normal {
+  stroke-width: 2px !important;
+}
+
+.edge-thickness-thick {
+  stroke-width: 3.5px !important;
+}
+
+.edge-pattern-solid {
+  stroke-dasharray: 0 !important;
+}
+
+.edge-pattern-dashed {
+  stroke-dasharray: 3 !important;
+}
+
+.edge-pattern-dotted {
+  stroke-dasharray: 2 !important;
+}
+
+.marker {
+  fill: var(--references) !important;
+}
+
+.marker.cross {
+  stroke: var(--references) !important;
+}
