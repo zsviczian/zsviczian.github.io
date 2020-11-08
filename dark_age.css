@@ -617,7 +617,6 @@ button[style*="padding: 4px 8px;"] {
 /* remove shadow border around calendar icon */
 .bp3-button:not([class*="bp3-intent-"]), .bp3-button:not([class*="bp3-intent-"]):hover {
   box-shadow: none;
-  color: var(--icons) !important;
 }
 
 .block-ref-count-button {
@@ -808,7 +807,7 @@ select option {
 /* Word Count */
 .bp3-button:not([class*="bp3-intent-"]) {
     /*background: transparent !important; not sure this is needed? */
-    color: var(--body-text) !important;
+    color: var(--icon) !important;
     font-family: Courier New;
     transition: color .3s ease;
 }
