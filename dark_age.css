@@ -807,7 +807,7 @@ select option {
 /* Word Count */
 .bp3-button:not([class*="bp3-intent-"]) {
     /*background: transparent !important; not sure this is needed? */
-    color: var(--icon) !important;
+    color: var(--icons) !important;
     font-family: Courier New;
     transition: color .3s ease;
 }
