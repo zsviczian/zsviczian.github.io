@@ -617,6 +617,7 @@ button[style*="padding: 4px 8px;"] {
 /* remove shadow border around calendar icon */
 .bp3-button:not([class*="bp3-intent-"]), .bp3-button:not([class*="bp3-intent-"]):hover {
   box-shadow: none;
+  color: var(--icons) !important;
 }
 
 .block-ref-count-button {
