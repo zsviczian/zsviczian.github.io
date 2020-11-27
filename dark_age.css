@@ -253,7 +253,7 @@ h4.level1 a:hover, h4.level2 a:hover, h4.level3 a:hover, h4.level4 a:hover {
 }
 
 /* Attribute links */
-strong[tabindex="-1"], .roam-attr-ref {
+strong[tabindex="-1"], .rm-attr-ref {
     color: var(--attributes-color) !important;
   }
 
