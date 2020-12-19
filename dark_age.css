@@ -193,7 +193,7 @@ h1, h1.level2, .rm-title-editing-display {
 }
 
 /* Page title & Daily date color */
-.rm-title-display {
+.rm-title-display, .rm-title-editing-display {
     color: var(--page-heading) !important;
   }
   
