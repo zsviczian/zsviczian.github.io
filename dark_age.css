@@ -141,9 +141,10 @@ h1 {
     font-size: var(--page-head-font-size) !important;
 }
 
-h1, h1.level2, .rm-title-editing-display {
+h1, h1.level2, .rm-title-editing-display, .rm-title-textarea {
     font-family: var(--header-font) !important;
 }
+
 
 .rm-heading-level-1 { /*was .rm-level1*/
     font-size: var(--h1-font-size) !important;
