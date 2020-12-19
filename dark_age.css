@@ -145,18 +145,18 @@ h1, h1.level2, .rm-title-editing-display, .rm-title-textarea {
     font-family: var(--header-font) !important;
 }
 
-
-.rm-heading-level-1 { /*was .rm-level1*/
+/*
+.rm-heading-level-1 { 
     font-size: var(--h1-font-size) !important;
 }
 
-.rm-heading-level-2 { /*was .rm-level2*/
+.rm-heading-level-2 { 
     font-size: var(--h2-font-size) !important;
 }
 
-.rm-heading-level-3 { /*was .rm-level3*/
+.rm-heading-level-3 { 
     font-size: var(--h3-font-size) !important;
-}
+}*/
 
 /* sidebar h1 */
 .level2[style*="margin: 0px"] {
@@ -189,9 +189,9 @@ h1, h1.level2, .rm-title-editing-display, .rm-title-textarea {
 }
 
 /* Heading/Header Colors, includes Date header on daily notes */
-.rm-heading-level-1, .rm-heading-level-2, .rm-heading-level-3 { /*was h1, h2, h3*/
+/*.rm-heading-level-1, .rm-heading-level-2, .rm-heading-level-3 { 
     color: var(--headings) !important;
-}
+}*/
 
 /* Page title & Daily date color */
 .rm-title-display, .rm-title-editing-display {
