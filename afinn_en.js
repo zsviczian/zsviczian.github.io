@@ -3499,4 +3499,4 @@ window.afinn = {
 	  "xoxoxo": 4,
 	  "xoxoxoxo": 4
 	}
-}
+};
