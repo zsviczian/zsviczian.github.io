@@ -1,4 +1,4 @@
-window.afinn {
+window.afinn = {
 	tokenize(text) {
 		return text
 			.toLowerCase()
