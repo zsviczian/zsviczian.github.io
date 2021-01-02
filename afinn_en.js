@@ -12,8 +12,8 @@ window.afinn = {
 	},
 	sum(x, y) {
 		return x+y;
-	}
-	
+	},
+	},
 	analyze(text) {
 		return tokenize(text)
 					.map(deleteUselessChars)
