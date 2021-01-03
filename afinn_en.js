@@ -1,23 +1,21 @@
 window.afinn =  {
-	tokenize(text) {
-		return text
-			.toLowerCase()
-			.split(' ');
+	tokenize: function (text) {
+		return text.toLowerCase().split(' ');
 	},
-	deleteUselessChars(word) {
+	deleteUselessChars: function(word) {
 		return word.replace(/[^\w]/g,'');
 	},
-	rateWord(word) {
+	rateWord: function(word) {
 		return (word in this.afinn_en) ? this.afinn_en[word] : 0;
 	},
-	sum(x, y) {
+	sum: function(x, y) {
 		return x+y;
 	},
-	analyze(text) {
+	analyze: function(text) {
 		return this.tokenize(text)
-					.map(this.deleteUselessChars)
-					.map(this.rateWord)
-					.reduce(this.sum);
+			.map(this.deleteUselessChars)
+			.map(this.rateWord)
+			.reduce(this.sum);
 	},
 	afinn_en : {
 	  "abandon": -2,
