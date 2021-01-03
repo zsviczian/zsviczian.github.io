@@ -1,23 +1,4 @@
-window.afinn =  {
-	tokenize: function (text) {
-		return text.toLowerCase().split(' ');
-	},
-	deleteUselessChars: function(word) {
-		return word.replace(/[^\w]/g,'');
-	},
-	rateWord: function(word) {
-		return (word in this.afinn_en) ? this.afinn_en[word] : 0;
-	},
-	sum: function(x, y) {
-		return x+y;
-	},
-	analyze: function(text) {
-		return this.tokenize(text)
-			.map(this.deleteUselessChars)
-			.map(this.rateWord)
-			.reduce(this.sum);
-	},
-	afinn_en : {
+window.afinn = {
 	  "abandon": -2,
 	  "abandoned": -2,
 	  "abandons": -2,
@@ -3496,5 +3477,4 @@ window.afinn =  {
 	  "xoxo": 3,
 	  "xoxoxo": 4,
 	  "xoxoxoxo": 4
-	}
 };
