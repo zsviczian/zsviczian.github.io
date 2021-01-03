@@ -8,16 +8,16 @@ window.afinn =  {
 		return word.replace(/[^\w]/g,'');
 	},
 	rateWord(word) {
-		return (word in afinn_en) ? afinn_en[word] : 0;
+		return (word in this.afinn_en) ? this.afinn_en[word] : 0;
 	},
 	sum(x, y) {
 		return x+y;
 	},
 	analyze(text) {
-		return tokenize(text)
-					.map(deleteUselessChars)
-					.map(rateWord)
-					.reduce(sum);
+		return this.tokenize(text)
+					.map(this.deleteUselessChars)
+					.map(this.rateWord)
+					.reduce(this.sum);
 	},
 	afinn_en : {
 	  "abandon": -2,
