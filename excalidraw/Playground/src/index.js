@@ -1,6 +1,6 @@
 //import "./styles.css";
 
-const excalidrawWrapper = document.getElementById("app");
+const excalidrawWrapper = document.getElementById("excalidraw-app");
 
 const props = {
   onChange: (data, appState) => {
