@@ -1,4 +1,4 @@
-import "./styles.css";
+//import "./styles.css";
 
 const excalidrawWrapper = document.getElementById("app");
 
