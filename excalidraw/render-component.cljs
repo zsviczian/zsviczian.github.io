@@ -119,13 +119,17 @@
 ;;state to capture when callback confirms React libraries have loaded
 (def deps-available (r/atom false))
 
-(defn deps-ready-callback []
-  (debug  ["(deps-ready-callback)"])
-  (reset! deps-available true))
+(defn check-js-dependencies []
+  (if (and (not= (str (type js/Excalidraw)) "")
+           (not= (str (type js/ReactDOM)) "")
+           (not= (str (type js/React)) ""))
+    (reset! deps-available true)
+    (js/setTimeout check-js-dependencies 1000)
+  ))
 
 (defn main [{:keys [block-uid]} & args]
   (debug ["(main) component starting..."])
-  (.excalidrawDependenciesCheck js/window deps-ready-callback)
+  (check-js-dependencies)
   (if (= @deps-available false)
     [:div "Libraries have not yet loaded. Please refresh the block in a moment."]
     (fn []
