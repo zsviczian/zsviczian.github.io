@@ -1,7 +1,7 @@
-const latestVersion   = 'excalidraw.alfa.v03';
-const filename         = 'https://zsviczian.github.io/excalidraw-alpha/render-component.cljs';
-const codeblockUID  = 'sketching';
-const codePage        = 'roam/excalidraw';
+var latestVersion   = 'excalidraw.alfa.v03';
+var filename         = 'https://zsviczian.github.io/excalidraw-alpha/render-component.cljs';
+var codeblockUID  = 'sketching';
+var codePage        = 'roam/excalidraw';
 
 function blockExists(blockUID) {
   const q = `[:find ?e . :where [?e :block/uid "${blockUID}"]]`;
