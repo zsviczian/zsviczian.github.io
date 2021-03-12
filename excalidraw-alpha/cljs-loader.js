@@ -1,8 +1,8 @@
 const latestVersion = 'excalidraw.app.alpha.v05';
 const mainComponentFile = 'https://zsviczian.github.io/excalidraw-alpha/main-component.cljs';
 const dataComponentFile = 'https://zsviczian.github.io/excalidraw-alpha/data-component.cljs';
-const sketchingUID  = 'testBLCK1'; //'sketching'
-const excalDATAUID = 'testBLCK2'; // 'ExcalDATA'
+const sketchingUID  = 'sketching'; //'sketching'
+const excalDATAUID = 'ExcalDATA'; // 'ExcalDATA'
 const pageTitle = 'roam/excalidraw';
 const mainComponentParent = "Main Component";
 const dataComponentParent = "Data Block Component";
