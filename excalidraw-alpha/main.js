@@ -150,10 +150,15 @@ window['ExcalidrawWrapper'] = class {
       if (diagram['elements'] == undefined) 
         diagram = excalidrawSplashScreen;    
     
+    if(diagram.appState.appearance == 'dark')
+      diagram.appState.exportWithDarkMode = true;
+    diagram.appState.exportBackground = true;
+      
     (async () => {
       const blob = await ExcalidrawUtils.exportToBlob({
         ...diagram,
         mimeType: "image/png",
+        exportWithDarkMode: "true",
     });
       const urlCreator = window.URL || window.webkitURL;
       let img = document.createElement('img');
@@ -166,7 +171,7 @@ window['ExcalidrawWrapper'] = class {
   static createBlock(parentUID, order, blockString) {
     const uid = window.roamAlphaAPI.util.generateUID();
     window.roamAlphaAPI.createBlock ({location: {"parent-uid": parentUID,
-                                                        "order": order},
+                                                 "order": order},
                                       block: {"string": blockString,
                                               "uid": uid}});
     return uid;
