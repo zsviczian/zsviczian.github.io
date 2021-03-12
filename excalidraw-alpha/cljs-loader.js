@@ -100,7 +100,7 @@ function sendXMLHttpRequest (filename, blockUID) {
   client.onreadystatechange = function() {
     if(client.readyState == 4) {
       console.log('ready ', client);
-      updateCodeBlock(blockUID,excalidraw.app.alpha.v05);
+      updateCodeBlock(blockUID,client.responseText);
     }
   }
   client.send();  
