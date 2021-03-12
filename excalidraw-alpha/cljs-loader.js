@@ -1,4 +1,4 @@
-const latestVersion = 'excalidraw.11';
+const latestVersion = 'excalidraw.app.alpha.v05';
 const mainComponentFile = 'https://zsviczian.github.io/excalidraw-alpha/main-component.cljs';
 const dataComponentFile = 'https://zsviczian.github.io/excalidraw-alpha/data-component.cljs';
 const sketchingUID  = 'testBLCK1'; //'sketching'
