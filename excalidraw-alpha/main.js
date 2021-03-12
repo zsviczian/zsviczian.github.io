@@ -195,6 +195,15 @@ window['ExcalidrawWrapper'] = class {
 }
 
 const cssCode = `
+@font-face {
+  font-family: "Virgil";
+  src: url("https://excalidraw.com/FG_Virgil.woff2");
+}
+@font-face {
+  font-family: "Cascadia";
+  src: url("https://excalidraw.com/Cascadia.woff2");
+}
+
 .ex-header-wrapper {
   background: silver; 
   height: 30px;
