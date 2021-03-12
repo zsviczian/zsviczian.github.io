@@ -1,4 +1,4 @@
-var DEBUG = true;
+var DEBUG = false;
 
 function myKeyboardListner(ev) {
   console.log(ev);
