@@ -1,1 +1,1 @@
-```clojure\n(ns excalidraw.data.alpha.v01)\n\n(def silent false)\n(defn debug [x] \n (if-not silent (apply (.-log js/console) x)))\n\n(defn main2 [{:keys [block-uid]} args]\n (debug [\"data: \" args])\n [:div [:span.excalidraw-data \"Excalidraw DATA\"]])```
+```clojure\n(ns excalidraw.data.alpha.v01)\n\n(def silent true)\n(defn debug [x] \n (if-not silent (apply (.-log js/console) x)))\n\n(defn main2 [{:keys [block-uid]} args]\n (debug [\"data: \" args])\n [:div [:span.excalidraw-data \"Excalidraw DATA\"]])```

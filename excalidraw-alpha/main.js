@@ -3,7 +3,7 @@
 /*  ctrl+z from reaching Roam when       */
 /*  drawing is in full screen veiw       */
 /*****************************************/
-var DEBUG = true;
+var DEBUG = false;
 
 function myKeyboardListner(ev) {
   console.log(ev);
