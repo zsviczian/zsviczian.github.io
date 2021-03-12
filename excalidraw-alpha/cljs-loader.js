@@ -99,7 +99,7 @@ function sendXMLHttpRequest (filename, blockUID) {
   client.open('GET', filename);
   client.onreadystatechange = function() {
     if(client.readyState == 4) {
-      console.log('ready ', client);
+      console.log('ready ', client.responseText);
       updateCodeBlock(blockUID,client.responseText);
     }
   }
