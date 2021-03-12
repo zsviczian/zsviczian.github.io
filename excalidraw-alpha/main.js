@@ -82,23 +82,7 @@ window['ExcalidrawWrapper'] = class {
     }), this.hostDIV);// document.getElementById(appName));
     if (DEBUG) console.log("js: ExcalidrawWrapper.constructor() ReactDOM.render() initiated") ;
   }
-  
-  async zoomToFit() {
-    if (DEBUG) console.log("js: ExcalidrawWrapper.zoomToFit() entering function");
-    if(this.excalidrawRef != null) 
-      if(this.excalidrawRef.current != null) {
-        if (DEBUG) console.log("js: ExcalidrawWrapper.zoomToFit() excalidrawRef.current is available");
-        const mainDIV = this.hostDIV.querySelector('main');
-        let viewMode = this.excalidrawRef.current.getAppState().viewModeEnabled;
-        if (viewMode) {
-          this.setViewModeEnabled(false);
-        }
-        const e = new KeyboardEvent("keydown", {bubbles : true, cancelable : true, shiftKey : true, code:"Digit1"});
-		mainDIV.dispatchEvent(e);
-        if (viewMode) this.setViewModeEnabled(true);
-      }
-  }
-  
+    
   //this is a workaround because Roam catches some of the keys (e.g. CTRL+Z) before 
   //Exalidraw. When the application is in edit mode / full screen, sink all keyboar events and retrigger
   //to Excalidraw main div
