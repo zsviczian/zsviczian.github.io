@@ -1,5 +1,6 @@
 libs = ['https://zsviczian.github.io/excalidraw-alpha/cljs-loader.js',
            'https://zsviczian.github.io/excalidraw-alpha/main.js',
+		   'https://unpkg.com/@excalidraw/utils@0.1.0-test/dist/excalidraw-utils.min.js',
            'https://unpkg.com/react@17/umd/react.production.min.js',
            'https://unpkg.com/react-dom@17/umd/react-dom.production.min.js',
            'https://unpkg.com/@excalidraw/excalidraw@0.4.2/dist/excalidraw.min.js']; 
