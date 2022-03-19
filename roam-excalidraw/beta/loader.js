@@ -1,6 +1,6 @@
 if (typeof window.ExcalidrawWrapper === 'undefined') {
   window.ExcalidrawConfig = {
-    rootPath: 'https://roam-excalidraw.com/',
+    rootPath: 'https://zsviczian.github.io/roam-excalidraw/',
     channel: 'beta',
     cljCodeVersion: 'excalidraw.app.beta.v10',
     DEBUG : false,
