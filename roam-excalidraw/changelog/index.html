@@ -1,0 +1,110 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="../style.css">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N42NV87MC0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-N42NV87MC0');
+    </script>                
+</head>
+<body>
+  <div style = "clear: both; width: 900px; margin:0 auto;">
+    <h1>Are you enjoying Excalidraw in Roam?</h1>
+    <p>Are you excited about the roadmap?<br>Support me in making it happen!</p><script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Buy me a coffee', '#a12540', 'D1D5302HF');kofiwidget2.draw();</script>
+    <h1 id="change-log">Changelog</h1>  
+
+  <h2>April 6th, 2021 MVP.v031 Release</h2>  
+  <h3>Minor changes and fixes:</h3>
+  <p>Upgraded Excalidraw component from 0.5.0 to 0.6.0. The new component now supports flipping objects horizontally and vertically. Only single objects are supported for now, object groups not yet.</p>
+  <p>Fixed autosave of text which caused Roam-Excalidraw to crash.</p>
+  <p>Fixed cropping of SVG images. Sometimes objects were cut on the sides. Hopefully this is now of the past.</p>
+  <p>Fixed editing of lines (Bezier curves). When pressing alt while in line edit mode multiple line break points were added.</p>
+  <p>Fixed drawing stuck in line edit mode when exiting a drawing during editing of a line.</p>
+  <hr>
+  <h2>March 26th, 2021 MVP.v03 Release</h2>
+
+  <div  style="width: 100%; height:506px; position: relative;"><iframe allowfullscreen="" height="100%" src="https://www.youtube.com/embed/X5xX1Ycyed0" width="100%" youtube-src-id="X5xX1Ycyed0"></iframe></div>
+  
+  <p><a href="settings.html">Detailed description of available settings</a></p>
+  <h3>Excalidraw loader</h3>
+  <p>Nest the following codeblok under {{[[roam/js]]}}</p>
+  <!--HTML generated using hilite.me--><div style="background: rgb(255, 255, 255); border-color: gray; border-image: initial; border-style: solid; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0px;">{</pre><pre style="line-height: 125%; margin: 0px;">  <span style="color: #008800; font-weight: bold;">let</span> s = <span style="color: #003388;">document</span>.createElement(<span style="background-color: #fff0f0; color: #dd2200;">'script'</span>);
+    s.type = <span style="background-color: #fff0f0; color: #dd2200;">'text/javascript'</span>;
+    s.src = <span style="background-color: #fff0f0; color: #dd2200;">'https://www.roam-excalidraw.com/dist/loader.js'</span>;
+    s.async = <span style="color: #008800; font-weight: bold;">false</span>;
+    <span style="color: #003388;">document</span>.getElementsByTagName(<span style="background-color: #fff0f0; color: #dd2200;">'head'</span>)[<span style="color: #0000dd; font-weight: bold;">0</span>].appendChild(s);  
+  }
+  </pre></div>
+  <h3>Improved nested text support</h3>
+  <p>Now supporting multi level nesting. Note however, that once you open the drawing for editing, the position of the text is fixed. You can change the text in the nested area, but not the position.</p>
+  <p><img src="./20210326/1.gif" width=500 alt="">  </p>
+  <hr>
+  <h2>March 24th, 2021  </h2>
+  <p style="color: red;">Changes are available on the beta channel only (beta.v04). <b> Change to beta channel if you are ok to find bugs... while hopefully you'll experience nothing serious, in worst case you may lose your drawing.</b></p>
+  <p>Change loader like this to use beta channel:</p>
+  <!--HTML generated using hilite.me--><div style="background: rgb(255, 255, 255); border-color: gray; border-image: initial; border-style: solid; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0px;">{</pre><pre style="line-height: 125%; margin: 0px;">  <span style="color: #008800; font-weight: bold;">let</span> s = <span style="color: #003388;">document</span>.createElement(<span style="background-color: #fff0f0; color: #dd2200;">'script'</span>);
+    s.type = <span style="background-color: #fff0f0; color: #dd2200;">'text/javascript'</span>;
+    s.src = <span style="background-color: #fff0f0; color: #dd2200;">'https://www.roam-excalidraw.com/beta/loader.js'</span>;
+    s.async = <span style="color: #008800; font-weight: bold;">false</span>;
+    <span style="color: #003388;">document</span>.getElementsByTagName(<span style="background-color: #fff0f0; color: #dd2200;">'head'</span>)[<span style="color: #0000dd; font-weight: bold;">0</span>].appendChild(s);  
+  }
+  </pre></div>
+  <h3>Quality of life improvements</h3>
+  <p>I removed the title from top. You can always nest your drawing under a block. No value in having a title field.</p>
+  <p>To edit your drawing move your mouse over the image, a pencil will appear in the top right corner, click the pencil.</p>
+  <p><img src="./20210324/4.jpg" width=200 alt="">  </p>
+  <p>In fullscreen mode I removed the zen-mode and grid-mode checkboxes. Instead you will find these in the context menu using right click.</p>
+  <p>I removed the save and cancel buttons from full screen mode. Instead you can now close full screen mode by clicking the X in the top right corner.</p>
+  <p><img src="./20210324/5.jpg" width=100 alt="">  </p>
+  <p>I added autosave. While editing, your drawing will be regularly saved to your graph.</p>
+  <p>While in embedded mode - i.e. when you are not editing your drawing - if you double click the image, you can access the underlying block.</p>
+  <p>((block-referencing)) a drawing in your graph now works (almost) as expected. (almost == if you click the pen to edit the drawing, it will not fully work).</p>
+  <h3>Nested text support</h3>
+  <p>Text on your drawing will be synchronized with text nested under the drawing. Synchronization works both ways. You can edit nested text and it will update on the drawing.</p>
+  <p><img src="./20210324/2.jpg" width=500 alt="">  </p>
+  <h3>Additional settings</h3>
+  <p><img src="./20210324/1.jpg" width=300 alt="">  </p>
+  <h3>Experimental: Added SVG paste option</h3>
+  <p>Copy a drawing using the copy to SVG command in fullscreen mode.</p>
+  <p>Use CTRL+V to paste the SVG into your Roam graph.</p>
+  <p><img src="./20210324/3.jpg" width=300 alt="">  </p>
+  <hr>
+  <h2>March 18th, 2021  </h2>
+  
+  <h3>Additional settings</h3>
+  <p>You must interact with a drawing by openning it for editing for the new settings to become visible, and also for changes to settings to take effect.</p>  
+  <p><img src="./20210318/1.png" width=300 alt="">  </p>
+  <p><img src="./20210318/2.png" width=500 alt="">  </p>
+  <p>full-screen-width is the gap in percentage of window width and window height when in editing mode. 0 will make Excapdraw completely cover the hosting Roam page.  </p>
+  <p><img src="./20210318/3.png" width=500 alt="">  </p>
+  
+  <h3>Added support for easier styling</h3>
+  <p>Use the following code in your [[roam/css]]:</p>
+  <!-- HTML generated using hipte.me --><div style="background: #ffffff; overflow:auto;width:auto;border:sopd gray;border-width:.1em .1em .1em 0.8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #555555">:root</span> {
+    --bg-ex-dark: 	<span style="color: #0000DD; font-weight: bold">#121212</span>;
+    --cl-ex-dark: 	lightgray;
+    --bg-ex-light:	<span style="color: #003388">white</span>;
+    --cl-ex-light:	<span style="color: #0000DD; font-weight: bold">#121212</span>;
+  }</pre></div>
+  <h3>Easily access the underlying block</h3>
+  <p>You can now double click on the image embedded on the Roam page to access the underlying block.</p>
+  <h3>Fixed sticky Zen Mode and Grid Mode.  </h3>
+  <h3>Other Minor stability improvements.  </h3>
+<hr>
+  <h2>March 14th, 2021  </h2>
+  
+  <p>MVP release  <p>
+
+  
+    <h1>Issues and feature requests</h1>
+    <p>With issues and feature requests please visit the <a href="https://github.com/zsviczian/roam-excalidraw-issues/issues" target="_blank">Roam-Excalidraw Issues GitHub</a> page</p>
+    <h1>Are you enjoying Excalidraw in Roam?</h1>
+    <p>Are you excited about the roadmap?<br>Support me in making it happen!</p><script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Buy me a coffee', '#a12540', 'D1D5302HF');kofiwidget2.draw();</script>
+  </div>
+  </body>
+
+</html>

@@ -1,0 +1,85 @@
+@font-face {
+  font-family: "Virgil";
+  src: url("https://excalidraw.com/FG_Virgil.woff2");
+}
+@font-face {
+  font-family: "Cascadia";
+  src: url("https://excalidraw.com/Cascadia.woff2");
+}
+
+.ex-fullscreen-button {
+  background-color: transparent;
+  position: absolute;
+  top: 2px;
+  z-index: 1100;
+  border-radius: 18px;
+  border: 1px solid transparent;
+}
+
+.ex-fullscreen-button:hover {
+  border: 1px solid gray;
+}
+
+.excalidraw-host {
+  display: block;
+}
+
+.ex-embed-button {
+  background-color: rgba(128,128,128,0.5);
+  color: yellow;
+  position: absolute;
+  top: 2px;
+  z-index: 1100;
+  border-radius: 18px;
+  border: 1px solid transparent;
+}
+
+.ex-embed-button:hover {
+  border: 1px solid red;
+}
+
+.excalidraw-wrapper { 
+  height: 100%;
+  margin: 0px;
+  position: relative;
+}
+
+.excalidraw-data {
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 2px 5px 2px 5px;
+}
+
+/**********************************/
+/*      Excalidraw overrides      */
+/**********************************/
+
+.excalidraw .github-corner {
+  display: none;
+}
+
+.excalidraw.excalidraw-modal-container {
+  z-index: 1010 !important; 
+}
+
+kbd {
+  color: #121212 !important;
+}
+
+.popover {
+  display: block;
+  top: auto;
+  left: auto;
+  z-index: 1010 !important;
+}
+
+.excalidraw .App-menu_top .buttonList {
+  display: flex;
+}
+
+:root[dir="ltr"]
+  .excalidraw
+  .layer-ui__wrapper
+  .zen-mode-transition.App-menu_bottom--transition-left {
+  transform: none;
+}
